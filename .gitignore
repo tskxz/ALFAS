@@ -1,0 +1,10 @@
+# Ficheiros do Microsoft Word na pasta docs
+docs/LEI-SMUL1-PI-SA-NOME-NOME-NOME.docx
+docs/*.docx
+docs/~$*.docx
+~$*.docx
+
+# Ficheiros temporários e do sistema
+Thumbs.db
+Desktop.ini
+.DS_Store
