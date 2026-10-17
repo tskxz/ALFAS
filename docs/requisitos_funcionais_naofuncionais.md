@@ -34,3 +34,27 @@
 
 ---
 
+## 2. Requisitos Não Funcionais (FURPS+)
+
+### 2.1. Usabilidade (Usability)
+* **RNF-U01 - Interface Responsiva:** A interface deve adaptar-se a diferentes tamanhos de ecrã (desktop e mobile), utilizando uma navegação adequada ao público jovem.
+* **RNF-U02 - Suporte Multilingue:** A estrutura da aplicação deve estar preparada para suportar mais do que um idioma (Português e Inglês).
+* **RNF-U03 - Mensagens do Sistema:** O sistema deve apresentar mensagens claras em caso de erro de preenchimento ou falha de operação.
+
+### 2.2. Fiabilidade (Reliability)
+* **RNF-R01 - Tratamento de Exceções:** O sistema deve tratar falhas de ligação à base de dados ou erros de validação sem interromper a execução do serviço.
+* **RNF-R02 - Integridade dos Calculos:** Os dados estatísticos devem ser calculados diretamente a partir da base de dados no momento da consulta.
+
+### 2.3. Desempenho (Performance)
+* **RNF-P01 - Fluidade da Interface:** O carregamento das páginas do frontend deve ocorrer sem bloqueios visíveis na navegação.
+* **RNF-P02 - Tempo de Resposta do Módulo Estatístico:** As consultas de processamento de dados e cálculo de métricas no backend devem responder dentro de prazos aceitáveis para o utilizador.
+
+### 2.4. Suportabilidade (Supportability)
+* **RNF-S01 - Separação de Camadas:** O projeto deve manter uma separação clara entre o frontend e o backend.
+* **RNF-S02 - Organização do Código:** O código deve seguir os princípios de Programação Orientada a Objetos (POO) e incluir documentação interna.
+
+### 2.5. Restrições (+)
+* **RNF-+01 - Tecnologias de Frontend:** O frontend da aplicação deve ser construído em **React**.
+* **RNF-+02 - Tecnologias de Backend:** A API e as regras de negócio devem ser desenvolvidas em **Python** com a framework **Flask**.
+* **RNF-+03 - Sistema de Base de Dados:** O sistema deve utilizar **MySQL** ou **SQL Server**.
+* **RNF-+04 - Proteção de Dados:** As palavras-passe devem ser guardadas com encriptação/hashing, garantindo a conformidade com as regras de proteção de dados de menores.
