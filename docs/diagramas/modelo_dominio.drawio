@@ -1,10 +1,10 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0">
   <diagram name="Domain Model ALFAS" id="domain_model_alfas">
-    <mxGraphModel dx="774" dy="629" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="933" dy="758" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="agg_user" parent="1" style="shape=folder;fontStyle=1;tabWidth=140;tabHeight=30;tabPosition=left;html=1;whiteSpace=wrap;verticalAlign=top;align=left;spacingLeft=10;spacingTop=5;fillColor=none;fontColor=light-dark(#FFFFFF,#FFFFFF);strokeColor=default;" value="&lt;b&gt;User &amp;lt;&amp;lt;aggregate&amp;gt;&amp;gt;&lt;/b&gt;" vertex="1">
+        <mxCell id="agg_user" parent="1" style="shape=folder;fontStyle=1;tabWidth=160;tabHeight=30;tabPosition=left;html=1;whiteSpace=wrap;verticalAlign=top;align=left;spacingLeft=10;spacingTop=5;fillColor=none;fontColor=light-dark(#FFFFFF,#FFFFFF);strokeColor=default;" value="&lt;b&gt;User &amp;lt;&amp;lt;aggregate&amp;gt;&amp;gt;&lt;/b&gt;" vertex="1">
           <mxGeometry height="460" width="520" x="50" y="40" as="geometry" />
         </mxCell>
         <mxCell id="u_root" parent="agg_user" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;" value="&lt;b&gt;&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;br&gt;&amp;lt;&amp;lt;Root&amp;gt;&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;User&lt;/b&gt;" vertex="1">
@@ -25,7 +25,7 @@
         <mxCell id="u_consent" parent="agg_user" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;fontColor=#333333;strokeColor=#666666;align=center;verticalAlign=middle;" value="&lt;b&gt;&amp;lt;&amp;lt;Value Object&amp;gt;&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;ParentalConsent&lt;/b&gt;" vertex="1">
           <mxGeometry height="50" width="140" x="190" y="270" as="geometry" />
         </mxCell>
-        <mxCell id="agg_resource" parent="1" style="shape=folder;fontStyle=1;tabWidth=140;tabHeight=30;tabPosition=left;html=1;whiteSpace=wrap;fillColor=none;strokeColor=default;verticalAlign=top;align=left;spacingLeft=10;spacingTop=5;" value="&lt;b&gt;&lt;font face=&quot;Helvetica&quot;&gt;Resource / Formação &amp;lt;&amp;lt;aggregate&amp;gt;&amp;gt;&lt;/font&gt;&lt;/b&gt;" vertex="1">
+        <mxCell id="agg_resource" parent="1" style="shape=folder;fontStyle=1;tabWidth=260;tabHeight=30;tabPosition=left;html=1;whiteSpace=wrap;fillColor=none;strokeColor=default;verticalAlign=top;align=left;spacingLeft=10;spacingTop=5;" value="&lt;b&gt;&lt;font face=&quot;Helvetica&quot;&gt;Resource / Formação &amp;lt;&amp;lt;aggregate&amp;gt;&amp;gt;&lt;/font&gt;&lt;/b&gt;" vertex="1">
           <mxGeometry height="460" width="580" x="600" y="40" as="geometry" />
         </mxCell>
         <mxCell id="r_root" parent="agg_resource" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;" value="&lt;b&gt;&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;br&gt;&amp;lt;&amp;lt;Root&amp;gt;&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;Resource&lt;/b&gt;" vertex="1">
@@ -49,7 +49,7 @@
         <mxCell id="r_lvl_user" parent="agg_resource" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;fontColor=#000000;strokeColor=default;align=center;verticalAlign=middle;" value="&lt;b&gt;&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;ResourceLevelUser&lt;/b&gt;" vertex="1">
           <mxGeometry height="50" width="150" x="130" y="370" as="geometry" />
         </mxCell>
-        <mxCell id="agg_quiz" parent="1" style="shape=folder;fontStyle=1;tabWidth=140;tabHeight=30;tabPosition=left;html=1;whiteSpace=wrap;fillColor=none;strokeColor=default;verticalAlign=top;align=left;spacingLeft=10;spacingTop=5;" value="&lt;b&gt;Quiz / Avaliação &amp;lt;&amp;lt;aggregate&amp;gt;&amp;gt;&lt;/b&gt;" vertex="1">
+        <mxCell id="agg_quiz" parent="1" style="shape=folder;fontStyle=1;tabWidth=230;tabHeight=30;tabPosition=left;html=1;whiteSpace=wrap;fillColor=none;strokeColor=default;verticalAlign=top;align=left;spacingLeft=10;spacingTop=5;" value="&lt;b&gt;Quiz / Avaliação &amp;lt;&amp;lt;aggregate&amp;gt;&amp;gt;&lt;/b&gt;" vertex="1">
           <mxGeometry height="460" width="550" x="1220" y="40" as="geometry" />
         </mxCell>
         <mxCell id="q_root" parent="agg_quiz" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;" value="&lt;b&gt;&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;br&gt;&amp;lt;&amp;lt;Root&amp;gt;&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;Quiz&lt;/b&gt;" vertex="1">
@@ -70,7 +70,7 @@
         <mxCell id="q_user" parent="agg_quiz" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;fontColor=#000000;strokeColor=default;align=center;verticalAlign=middle;" value="&lt;b&gt;&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;QuizUser&lt;/b&gt;" vertex="1">
           <mxGeometry height="50" width="130" x="380" y="270" as="geometry" />
         </mxCell>
-        <mxCell id="agg_content" parent="1" style="shape=folder;fontStyle=1;tabWidth=140;tabHeight=30;tabPosition=left;html=1;whiteSpace=wrap;fillColor=none;strokeColor=default;verticalAlign=top;align=left;spacingLeft=10;spacingTop=5;" value="&lt;b&gt;Biblioteca Virtual &amp;amp; Info &amp;lt;&amp;lt;aggregate&amp;gt;&amp;gt;&lt;/b&gt;" vertex="1">
+        <mxCell id="agg_content" parent="1" style="shape=folder;fontStyle=1;tabWidth=280;tabHeight=30;tabPosition=left;html=1;whiteSpace=wrap;fillColor=none;strokeColor=default;verticalAlign=top;align=left;spacingLeft=10;spacingTop=5;" value="&lt;b&gt;Biblioteca Virtual &amp;amp; Info &amp;lt;&amp;lt;aggregate&amp;gt;&amp;gt;&lt;/b&gt;" vertex="1">
           <mxGeometry height="200" width="750" x="40" y="540" as="geometry" />
         </mxCell>
         <mxCell id="c_news" parent="agg_content" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;fontColor=#000000;strokeColor=default;align=center;verticalAlign=middle;" value="&lt;b&gt;&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;News&lt;/b&gt;" vertex="1">
@@ -83,7 +83,7 @@
           <mxGeometry height="50" width="130" x="380" y="60" as="geometry" />
         </mxCell>
         <mxCell id="c_type" parent="agg_content" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;fontColor=#000000;strokeColor=default;align=center;verticalAlign=middle;" value="&lt;b&gt;&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;ContentType&lt;/b&gt;" vertex="1">
-          <mxGeometry height="50" width="130" x="560" y="60" as="geometry" />
+          <mxGeometry height="50" width="130" x="580" y="60" as="geometry" />
         </mxCell>
         <mxCell id="vo_user_id1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;align=center;verticalAlign=middle;" value="&lt;b&gt;&amp;lt;&amp;lt;Value Object&amp;gt;&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;User ID&lt;/b&gt;" vertex="1">
           <mxGeometry height="45" width="120" x="580" y="550" as="geometry" />
@@ -92,7 +92,9 @@
           <mxGeometry height="45" width="120" x="1160" y="550" as="geometry" />
         </mxCell>
         <mxCell id="e_u1" edge="1" parent="1" source="u_root" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=1.5;dashed=0;curved=1;curveGeometry=1;" target="u_gender" value="has">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" x="-0.1467" y="-23" as="geometry">
+            <mxPoint x="2" y="-1" as="offset" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="e_u2" edge="1" parent="1" source="u_root" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=1.5;dashed=0;curved=1;curveGeometry=1;" target="u_school" value="has">
           <mxGeometry relative="1" x="-0.6364" y="-20" as="geometry">
@@ -100,60 +102,88 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="e_u3" edge="1" parent="1" source="u_root" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=1.5;dashed=0;curved=1;curveGeometry=1;" target="u_state" value="has">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" x="0.0672" y="16" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="e_u4" edge="1" parent="1" source="u_root" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=1.5;dashed=0;curved=1;curveGeometry=1;" target="u_role" value="has">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" x="-0.0545" y="14" as="geometry">
+            <mxPoint x="-1" as="offset" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="e_u5" edge="1" parent="1" source="u_root" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=1.5;dashed=0;curved=1;curveGeometry=1;" target="u_consent" value="has">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" x="0.375" y="20" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="e_r1" edge="1" parent="1" source="r_root" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=1.5;dashed=0;curved=1;curveGeometry=1;" target="r_health" value="belongs to">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="e_r2" edge="1" parent="1" source="r_root" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=1.5;dashed=0;curved=1;curveGeometry=1;" target="r_type" value="is of type">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" x="-0.2977" y="37" as="geometry">
+            <mxPoint y="-2" as="offset" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="e_r3" edge="1" parent="1" source="r_root" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=1.5;dashed=0;curved=1;curveGeometry=1;" target="r_state" value="has state">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="e_r4" edge="1" parent="1" source="r_root" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=1.5;dashed=0;curved=1;curveGeometry=1;" target="r_level" value="has levels">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" x="0.5419" y="25" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="e_r5" edge="1" parent="1" source="r_root" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;strokeWidth=1.5;dashed=0;curved=1;curveGeometry=1;" target="r_user" value="enrolled by">
-          <mxGeometry relative="1" x="0.0204" as="geometry">
+          <mxGeometry relative="1" x="0.4795" y="-35" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="e_r6" edge="1" parent="1" source="r_level" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=1.5;dashed=0;curved=1;curveGeometry=1;" target="r_lvl_user" value="progress in">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" x="0.1141" y="37" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="e_q1" edge="1" parent="1" source="q_root" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=1.5;dashed=0;curved=1;curveGeometry=1;" target="q_type" value="is of type">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" x="-0.4916" y="-14" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="e_q2" edge="1" parent="1" source="q_root" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=1.5;dashed=0;curved=1;curveGeometry=1;" target="q_state" value="has state">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" x="0.2878" y="32" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="e_q3" edge="1" parent="1" source="q_root" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=1.5;dashed=0;curved=1;curveGeometry=1;" target="q_question" value="contains">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" x="-0.6" y="30" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="e_q4" edge="1" parent="1" source="q_question" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=1.5;dashed=0;curved=1;curveGeometry=1;" target="q_answer" value="has answers">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" y="50" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="e_q5" edge="1" parent="1" source="q_root" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=1.5;dashed=0;curved=1;curveGeometry=1;" target="q_user" value="completed by">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" x="0.061" y="61" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="e_c1" edge="1" parent="1" source="c_content" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=1.5;dashed=0;curved=1;curveGeometry=1;" target="c_type" value="is of type">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" x="0.1429" y="-15" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="e_ext1" edge="1" parent="1" source="r_user" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=1.5;dashed=0;curved=1;curveGeometry=1;" target="vo_user_id1" value="references">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" x="0.0704" y="-34" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="e_ext2" edge="1" parent="1" source="vo_user_id1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=1.5;dashed=0;curved=1;curveGeometry=1;" target="u_root" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="e_ext3" edge="1" parent="1" source="q_root" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;strokeWidth=1.5;dashed=0;curved=1;curveGeometry=1;" target="vo_res_id1" value="belongs to">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" x="0.0084" y="34" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="e_ext4" edge="1" parent="1" source="vo_res_id1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=1.5;dashed=0;curved=1;curveGeometry=1;" target="r_root" value="">
           <mxGeometry relative="1" as="geometry" />
