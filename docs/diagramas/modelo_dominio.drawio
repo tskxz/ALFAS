@@ -1,97 +1,97 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0">
   <diagram name="Domain Model ALFAS" id="domain_model_alfas">
-    <mxGraphModel dx="933" dy="758" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="774" dy="629" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="agg_user" parent="1" style="shape=folder;fontStyle=1;tabWidth=160;tabHeight=30;tabPosition=left;html=1;whiteSpace=wrap;verticalAlign=top;align=left;spacingLeft=10;spacingTop=5;fillColor=none;fontColor=light-dark(#FFFFFF,#000000);strokeColor=default;" value="" vertex="1">
           <mxGeometry height="460" width="520" x="50" y="40" as="geometry" />
         </mxCell>
-        <mxCell id="u_root" parent="agg_user" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;" value="&lt;b&gt;&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;br&gt;&amp;lt;&amp;lt;Root&amp;gt;&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;User&lt;/b&gt;" vertex="1">
+        <mxCell id="u_root" parent="agg_user" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;" value="&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;br&gt;&amp;lt;&amp;lt;Root&amp;gt;&amp;gt;&lt;br&gt;User" vertex="1">
           <mxGeometry height="60" width="140" x="190" y="50" as="geometry" />
         </mxCell>
-        <mxCell id="u_gender" parent="agg_user" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;fontColor=#000000;strokeColor=default;align=center;verticalAlign=middle;" value="&lt;b&gt;&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;Gender&lt;/b&gt;" vertex="1">
+        <mxCell id="u_gender" parent="agg_user" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;fontColor=#000000;strokeColor=default;align=center;verticalAlign=middle;" value="&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;br&gt;Gender" vertex="1">
           <mxGeometry height="50" width="120" x="30" y="160" as="geometry" />
         </mxCell>
-        <mxCell id="u_school" parent="agg_user" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;fontColor=#000000;strokeColor=default;align=center;verticalAlign=middle;" value="&lt;b&gt;&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;SchoolYear&lt;/b&gt;" vertex="1">
+        <mxCell id="u_school" parent="agg_user" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;fontColor=#000000;strokeColor=default;align=center;verticalAlign=middle;" value="&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;br&gt;SchoolYear" vertex="1">
           <mxGeometry height="50" width="130" x="190" y="160" as="geometry" />
         </mxCell>
-        <mxCell id="u_state" parent="agg_user" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;fontColor=#000000;strokeColor=default;align=center;verticalAlign=middle;" value="&lt;b&gt;&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;UserState&lt;/b&gt;" vertex="1">
+        <mxCell id="u_state" parent="agg_user" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;fontColor=#000000;strokeColor=default;align=center;verticalAlign=middle;" value="&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;br&gt;UserState" vertex="1">
           <mxGeometry height="50" width="120" x="360" y="160" as="geometry" />
         </mxCell>
-        <mxCell id="u_role" parent="agg_user" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;fontColor=#000000;strokeColor=default;align=center;verticalAlign=middle;" value="&lt;b&gt;&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;Role&lt;/b&gt;" vertex="1">
+        <mxCell id="u_role" parent="agg_user" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;fontColor=#000000;strokeColor=default;align=center;verticalAlign=middle;" value="&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;br&gt;Role" vertex="1">
           <mxGeometry height="50" width="120" x="30" y="270" as="geometry" />
         </mxCell>
-        <mxCell id="u_consent" parent="agg_user" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;fontColor=#333333;strokeColor=#666666;align=center;verticalAlign=middle;" value="&lt;b&gt;&amp;lt;&amp;lt;Value Object&amp;gt;&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;ParentalConsent&lt;/b&gt;" vertex="1">
+        <mxCell id="u_consent" parent="agg_user" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;fontColor=#333333;strokeColor=#666666;align=center;verticalAlign=middle;" value="&amp;lt;&amp;lt;Value Object&amp;gt;&amp;gt;&lt;br&gt;ParentalConsent" vertex="1">
           <mxGeometry height="50" width="140" x="190" y="270" as="geometry" />
         </mxCell>
         <mxCell id="agg_resource" parent="1" style="shape=folder;fontStyle=1;tabWidth=260;tabHeight=30;tabPosition=left;html=1;whiteSpace=wrap;fillColor=none;strokeColor=default;verticalAlign=top;align=left;spacingLeft=10;spacingTop=5;" value="" vertex="1">
           <mxGeometry height="460" width="580" x="600" y="40" as="geometry" />
         </mxCell>
-        <mxCell id="r_root" parent="agg_resource" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;" value="&lt;b&gt;&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;br&gt;&amp;lt;&amp;lt;Root&amp;gt;&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;Resource&lt;/b&gt;" vertex="1">
+        <mxCell id="r_root" parent="agg_resource" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;" value="&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;br&gt;&amp;lt;&amp;lt;Root&amp;gt;&amp;gt;&lt;br&gt;Resource" vertex="1">
           <mxGeometry height="60" width="150" x="220" y="50" as="geometry" />
         </mxCell>
-        <mxCell id="r_health" parent="agg_resource" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=default;" value="&lt;b&gt;&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;HealthArea&lt;/b&gt;" vertex="1">
+        <mxCell id="r_health" parent="agg_resource" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=default;" value="&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;br&gt;HealthArea" vertex="1">
           <mxGeometry height="50" width="130" x="40" y="160" as="geometry" />
         </mxCell>
-        <mxCell id="r_type" parent="agg_resource" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;fontColor=#000000;strokeColor=default;align=center;verticalAlign=middle;" value="&lt;b&gt;&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;ResourceType&lt;/b&gt;" vertex="1">
+        <mxCell id="r_type" parent="agg_resource" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;fontColor=#000000;strokeColor=default;align=center;verticalAlign=middle;" value="&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;br&gt;ResourceType" vertex="1">
           <mxGeometry height="50" width="130" x="220" y="160" as="geometry" />
         </mxCell>
-        <mxCell id="r_state" parent="agg_resource" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;fontColor=#000000;strokeColor=default;align=center;verticalAlign=middle;" value="&lt;b&gt;&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;ResourceState&lt;/b&gt;" vertex="1">
+        <mxCell id="r_state" parent="agg_resource" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;fontColor=#000000;strokeColor=default;align=center;verticalAlign=middle;" value="&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;br&gt;ResourceState" vertex="1">
           <mxGeometry height="50" width="130" x="400" y="160" as="geometry" />
         </mxCell>
-        <mxCell id="r_level" parent="agg_resource" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;fontColor=#000000;strokeColor=default;align=center;verticalAlign=middle;" value="&lt;b&gt;&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;ResourceLevel&lt;/b&gt;" vertex="1">
+        <mxCell id="r_level" parent="agg_resource" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;fontColor=#000000;strokeColor=default;align=center;verticalAlign=middle;" value="&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;br&gt;ResourceLevel" vertex="1">
           <mxGeometry height="50" width="140" x="130" y="270" as="geometry" />
         </mxCell>
-        <mxCell id="r_user" parent="agg_resource" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;fontColor=#000000;strokeColor=default;align=center;verticalAlign=middle;" value="&lt;b&gt;&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;ResourceUser&lt;/b&gt;" vertex="1">
+        <mxCell id="r_user" parent="agg_resource" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;fontColor=#000000;strokeColor=default;align=center;verticalAlign=middle;" value="&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;br&gt;ResourceUser" vertex="1">
           <mxGeometry height="50" width="140" x="310" y="270" as="geometry" />
         </mxCell>
-        <mxCell id="r_lvl_user" parent="agg_resource" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;fontColor=#000000;strokeColor=default;align=center;verticalAlign=middle;" value="&lt;b&gt;&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;ResourceLevelUser&lt;/b&gt;" vertex="1">
+        <mxCell id="r_lvl_user" parent="agg_resource" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;fontColor=#000000;strokeColor=default;align=center;verticalAlign=middle;" value="&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;br&gt;ResourceLevelUser" vertex="1">
           <mxGeometry height="50" width="150" x="130" y="370" as="geometry" />
         </mxCell>
         <mxCell id="agg_quiz" parent="1" style="shape=folder;fontStyle=1;tabWidth=230;tabHeight=30;tabPosition=left;html=1;whiteSpace=wrap;fillColor=none;strokeColor=default;verticalAlign=top;align=left;spacingLeft=10;spacingTop=5;" value="" vertex="1">
           <mxGeometry height="460" width="550" x="1220" y="40" as="geometry" />
         </mxCell>
-        <mxCell id="q_root" parent="agg_quiz" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;" value="&lt;b&gt;&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;br&gt;&amp;lt;&amp;lt;Root&amp;gt;&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;Quiz&lt;/b&gt;" vertex="1">
+        <mxCell id="q_root" parent="agg_quiz" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;" value="&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;br&gt;&amp;lt;&amp;lt;Root&amp;gt;&amp;gt;&lt;br&gt;Quiz" vertex="1">
           <mxGeometry height="60" width="140" x="200" y="50" as="geometry" />
         </mxCell>
-        <mxCell id="q_type" parent="agg_quiz" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;fontColor=#000000;strokeColor=default;align=center;verticalAlign=middle;" value="&lt;b&gt;&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;QuizType&lt;/b&gt;" vertex="1">
+        <mxCell id="q_type" parent="agg_quiz" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;fontColor=#000000;strokeColor=default;align=center;verticalAlign=middle;" value="&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;br&gt;QuizType" vertex="1">
           <mxGeometry height="50" width="120" x="40" y="160" as="geometry" />
         </mxCell>
-        <mxCell id="q_state" parent="agg_quiz" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;fontColor=#000000;strokeColor=default;align=center;verticalAlign=middle;" value="&lt;b&gt;&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;QAState&lt;/b&gt;" vertex="1">
+        <mxCell id="q_state" parent="agg_quiz" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;fontColor=#000000;strokeColor=default;align=center;verticalAlign=middle;" value="&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;br&gt;QAState" vertex="1">
           <mxGeometry height="50" width="120" x="380" y="160" as="geometry" />
         </mxCell>
-        <mxCell id="q_question" parent="agg_quiz" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;fontColor=#000000;strokeColor=default;align=center;verticalAlign=middle;" value="&lt;b&gt;&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;Question&lt;/b&gt;" vertex="1">
+        <mxCell id="q_question" parent="agg_quiz" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;fontColor=#000000;strokeColor=default;align=center;verticalAlign=middle;" value="&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;br&gt;Question" vertex="1">
           <mxGeometry height="50" width="140" x="200" y="160" as="geometry" />
         </mxCell>
-        <mxCell id="q_answer" parent="agg_quiz" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;fontColor=#000000;strokeColor=default;align=center;verticalAlign=middle;" value="&lt;b&gt;&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;Answer&lt;/b&gt;" vertex="1">
+        <mxCell id="q_answer" parent="agg_quiz" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;fontColor=#000000;strokeColor=default;align=center;verticalAlign=middle;" value="&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;br&gt;Answer" vertex="1">
           <mxGeometry height="50" width="140" x="200" y="270" as="geometry" />
         </mxCell>
-        <mxCell id="q_user" parent="agg_quiz" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;fontColor=#000000;strokeColor=default;align=center;verticalAlign=middle;" value="&lt;b&gt;&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;QuizUser&lt;/b&gt;" vertex="1">
+        <mxCell id="q_user" parent="agg_quiz" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;fontColor=#000000;strokeColor=default;align=center;verticalAlign=middle;" value="&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;br&gt;QuizUser" vertex="1">
           <mxGeometry height="50" width="130" x="380" y="270" as="geometry" />
         </mxCell>
         <mxCell id="agg_content" parent="1" style="shape=folder;fontStyle=1;tabWidth=280;tabHeight=30;tabPosition=left;html=1;whiteSpace=wrap;fillColor=none;strokeColor=default;verticalAlign=top;align=left;spacingLeft=10;spacingTop=5;" value="" vertex="1">
           <mxGeometry height="200" width="750" x="40" y="540" as="geometry" />
         </mxCell>
-        <mxCell id="c_news" parent="agg_content" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;fontColor=#000000;strokeColor=default;align=center;verticalAlign=middle;" value="&lt;b&gt;&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;News&lt;/b&gt;" vertex="1">
+        <mxCell id="c_news" parent="agg_content" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;fontColor=#000000;strokeColor=default;align=center;verticalAlign=middle;" value="&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;br&gt;News" vertex="1">
           <mxGeometry height="50" width="130" x="40" y="60" as="geometry" />
         </mxCell>
-        <mxCell id="c_activity" parent="agg_content" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;fontColor=#000000;strokeColor=default;align=center;verticalAlign=middle;" value="&lt;b&gt;&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;Activity&lt;/b&gt;" vertex="1">
+        <mxCell id="c_activity" parent="agg_content" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;fontColor=#000000;strokeColor=default;align=center;verticalAlign=middle;" value="&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;br&gt;Activity" vertex="1">
           <mxGeometry height="50" width="130" x="210" y="60" as="geometry" />
         </mxCell>
-        <mxCell id="c_content" parent="agg_content" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;fontColor=#000000;strokeColor=default;align=center;verticalAlign=middle;" value="&lt;b&gt;&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;Content&lt;/b&gt;" vertex="1">
+        <mxCell id="c_content" parent="agg_content" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;fontColor=#000000;strokeColor=default;align=center;verticalAlign=middle;" value="&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;br&gt;Content" vertex="1">
           <mxGeometry height="50" width="130" x="380" y="60" as="geometry" />
         </mxCell>
-        <mxCell id="c_type" parent="agg_content" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;fontColor=#000000;strokeColor=default;align=center;verticalAlign=middle;" value="&lt;b&gt;&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;ContentType&lt;/b&gt;" vertex="1">
+        <mxCell id="c_type" parent="agg_content" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;fontColor=#000000;strokeColor=default;align=center;verticalAlign=middle;" value="&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;br&gt;ContentType" vertex="1">
           <mxGeometry height="50" width="130" x="580" y="60" as="geometry" />
         </mxCell>
         <mxCell id="2vyJC88wGN8R2tS5ndep-10" parent="agg_content" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Biblioteca virtual &amp;lt;&amp;lt;aggregate&amp;gt;&amp;gt;" vertex="1">
           <mxGeometry height="30" width="180" x="15" as="geometry" />
         </mxCell>
-        <mxCell id="vo_user_id1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;align=center;verticalAlign=middle;" value="&lt;b&gt;&amp;lt;&amp;lt;Value Object&amp;gt;&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;User ID&lt;/b&gt;" vertex="1">
+        <mxCell id="vo_user_id1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;align=center;verticalAlign=middle;" value="&amp;lt;&amp;lt;Value Object&amp;gt;&amp;gt;&lt;br&gt;User ID" vertex="1">
           <mxGeometry height="45" width="120" x="580" y="550" as="geometry" />
         </mxCell>
-        <mxCell id="vo_res_id1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;align=center;verticalAlign=middle;" value="&lt;b&gt;&amp;lt;&amp;lt;Value Object&amp;gt;&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;Resource ID&lt;/b&gt;" vertex="1">
+        <mxCell id="vo_res_id1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;align=center;verticalAlign=middle;" value="&amp;lt;&amp;lt;Value Object&amp;gt;&amp;gt;&lt;br&gt;Resource ID" vertex="1">
           <mxGeometry height="45" width="120" x="1160" y="550" as="geometry" />
         </mxCell>
         <mxCell id="e_u1" edge="1" parent="1" source="u_root" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=1.5;dashed=0;curved=1;curveGeometry=1;" target="u_gender" value="has">
