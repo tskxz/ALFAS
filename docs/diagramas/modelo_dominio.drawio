@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0">
   <diagram name="Domain Model ALFAS" id="domain_model_alfas">
-    <mxGraphModel dx="774" dy="629" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="1513" dy="1410" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -102,6 +102,10 @@
         <mxCell id="e_u2" edge="1" parent="1" source="u_root" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=1.5;dashed=0;curved=1;curveGeometry=1;endArrow=none;endFill=0;" target="u_school" value="has">
           <mxGeometry relative="1" x="-0.6475" y="-20" as="geometry">
             <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="310" y="180" />
+              <mxPoint x="260" y="180" />
+            </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="e_u3" edge="1" parent="1" source="u_root" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=1.5;dashed=0;curved=1;curveGeometry=1;endArrow=none;endFill=0;" target="u_state" value="has">
@@ -112,11 +116,19 @@
         <mxCell id="e_u4" edge="1" parent="1" source="u_root" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=1.5;dashed=0;curved=1;curveGeometry=1;endArrow=none;endFill=0;" target="u_role" value="has">
           <mxGeometry relative="1" x="-0.0574" y="14" as="geometry">
             <mxPoint x="-1" as="offset" />
+            <Array as="points">
+              <mxPoint x="220" y="120" />
+              <mxPoint x="220" y="335" />
+            </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="e_u5" edge="1" parent="1" source="u_root" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=1.5;dashed=0;curved=1;curveGeometry=1;endArrow=none;endFill=0;" target="u_consent" value="has">
-          <mxGeometry relative="1" x="0.375" y="20" as="geometry">
+          <mxGeometry relative="1" x="-0.8795" y="-10" as="geometry">
             <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="360" y="230" />
+              <mxPoint x="330" y="230" />
+            </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="e_r1" edge="1" parent="1" source="r_root" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=1.5;dashed=0;curved=1;curveGeometry=1;endArrow=none;endFill=0;" target="r_health" value="belongs to">
@@ -127,6 +139,10 @@
         <mxCell id="e_r2" edge="1" parent="1" source="r_root" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=1.5;dashed=0;curved=1;curveGeometry=1;endArrow=none;endFill=0;" target="r_type" value="is of type">
           <mxGeometry relative="1" x="-0.2854" y="37" as="geometry">
             <mxPoint y="-2" as="offset" />
+            <Array as="points">
+              <mxPoint x="895" y="175" />
+              <mxPoint x="840" y="175" />
+            </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="e_r3" edge="1" parent="1" source="r_root" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=1.5;dashed=0;curved=1;curveGeometry=1;endArrow=none;endFill=0;" target="r_state" value="has state">
@@ -137,11 +153,18 @@
         <mxCell id="e_r4" edge="1" parent="1" source="r_root" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=1.5;dashed=0;curved=1;curveGeometry=1;endArrow=none;endFill=0;" target="r_level" value="has levels">
           <mxGeometry relative="1" x="0.5463" y="25" as="geometry">
             <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="780" y="120" />
+            </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="e_r5" edge="1" parent="1" source="r_root" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;strokeWidth=1.5;dashed=0;curved=1;curveGeometry=1;endArrow=none;endFill=0;" target="r_user" value="enrolled by">
           <mxGeometry relative="1" x="0.4817" y="-35" as="geometry">
             <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="895" y="170" />
+              <mxPoint x="980" y="170" />
+            </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="e_r6" edge="1" parent="1" source="r_level" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=1.5;dashed=0;curved=1;curveGeometry=1;endArrow=none;endFill=0;" target="r_lvl_user" value="progress in">
@@ -172,6 +195,10 @@
         <mxCell id="e_q5" edge="1" parent="1" source="q_root" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=1.5;dashed=0;curved=1;curveGeometry=1;endArrow=none;endFill=0;" target="q_user" value="completed by">
           <mxGeometry relative="1" x="0.0605" y="61" as="geometry">
             <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="1580" y="120" />
+              <mxPoint x="1580" y="335" />
+            </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="e_c1" edge="1" parent="1" source="c_content" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=1.5;dashed=0;curved=1;curveGeometry=1;endArrow=none;endFill=0;" target="c_type" value="is of type">
@@ -182,18 +209,35 @@
         <mxCell id="e_ext1" edge="1" parent="1" source="r_user" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=1.5;dashed=0;curved=1;curveGeometry=1;endArrow=none;endFill=0;" target="vo_user_id1" value="references">
           <mxGeometry relative="1" x="0.0698" y="-34" as="geometry">
             <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="940" y="572.5" />
+            </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="e_ext2" edge="1" parent="1" source="vo_user_id1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=1.5;dashed=0;curved=1;curveGeometry=1;endArrow=none;endFill=0;" target="u_root" value="">
-          <mxGeometry relative="1" x="0.0014" as="geometry" />
+          <mxGeometry relative="1" x="0.0014" as="geometry">
+            <Array as="points">
+              <mxPoint x="400" y="572.5" />
+              <mxPoint x="400" y="120" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="e_ext3" edge="1" parent="1" source="q_root" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;strokeWidth=1.5;dashed=0;curved=1;curveGeometry=1;endArrow=none;endFill=0;" target="vo_res_id1" value="belongs to">
           <mxGeometry relative="1" x="0.0101" y="34" as="geometry">
             <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="1490" y="80" />
+              <mxPoint x="1220" y="80" />
+            </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="e_ext4" edge="1" parent="1" source="vo_res_id1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=1.5;dashed=0;curved=1;curveGeometry=1;endArrow=none;endFill=0;" target="r_root" value="">
-          <mxGeometry relative="1" x="0.0008" as="geometry" />
+          <mxGeometry relative="1" x="0.0019" as="geometry">
+            <Array as="points">
+              <mxPoint x="990" y="572.5" />
+              <mxPoint x="990" y="120" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="2vyJC88wGN8R2tS5ndep-7" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="User &amp;lt;&amp;lt;aggregate&amp;gt;&amp;gt;" vertex="1">
           <mxGeometry height="30" width="150" x="40" y="40" as="geometry" />
