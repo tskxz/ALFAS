@@ -1,0 +1,258 @@
+ALFAS — MODELO RELACIONAL DE DADOS | SPRINT A
+Base documental: diagrama Data Relational Model v1.0 fornecido pelo professor; modelo de domínio, requisitos funcionais e Issue #3 do repositório ALFAS.
+Os tipos são lógicos/genéricos e devem ser adaptados ao SGBD escolhido (MySQL ou SQL Server).
+PK = chave primária | FK = chave estrangeira | UK = único.
+
+1. UTILIZADORES E ACESSO
+
+GENDERS
+- id INT PK
+- gender VARCHAR(50) NOT NULL
+
+ROLES
+- id INT PK
+- name VARCHAR(50) NOT NULL UK
+
+ROLE_USER
+- role_id INT PK, FK -> ROLES.id
+- user_id INT PK, FK -> USERS.id
+- PK composta (role_id, user_id)
+
+USERS
+- id INT PK
+- name VARCHAR(150) NOT NULL
+- gender_id INT FK -> GENDERS.id
+- schoolyear_id INT FK -> SCHOOLYEARS.id
+- birth_date DATE
+- parental_consent BOOLEAN NOT NULL DEFAULT FALSE
+- email VARCHAR(254) NOT NULL UK
+- img_url VARCHAR(500)
+- email_verified_at DATETIME
+- password VARCHAR(255) NOT NULL
+- remember_token VARCHAR(255)
+- userstate_id INT FK -> USERSTATES.id
+
+USERSTATES
+- id INT PK
+- state VARCHAR(50) NOT NULL
+
+SCHOOLYEARS
+- id INT PK
+- schoolyear VARCHAR(50) NOT NULL
+
+2. FORMAÇÃO E RECURSOS
+
+HEALTHAREAS
+- id INT PK
+- title VARCHAR(150) NOT NULL
+- subtitle VARCHAR(255)
+- description TEXT
+- icon VARCHAR(255)
+- img_url VARCHAR(500)
+- video_url VARCHAR(500)
+- resourcestate_id INT FK -> RESOURCESTATES.id
+
+RESOURCES
+- id INT PK
+- name VARCHAR(150) NOT NULL
+- description TEXT
+- healtharea_id INT FK -> HEALTHAREAS.id
+- resourcetype_id INT FK -> RESOURCETYPES.id
+- resourcestate_id INT FK -> RESOURCESTATES.id
+- img_url VARCHAR(500)
+- badge_url VARCHAR(500)
+
+RESOURCELEVELS
+- id INT PK
+- level INT NOT NULL
+- title VARCHAR(150) NOT NULL
+- description TEXT
+- video_url VARCHAR(500)
+- pdf_url VARCHAR(500)
+- resource_id INT FK -> RESOURCES.id
+- resourcestate_id INT FK -> RESOURCESTATES.id
+
+RESOURCETYPES
+- id INT PK
+- type VARCHAR(50) NOT NULL
+
+RESOURCESTATES
+- id INT PK
+- state VARCHAR(50) NOT NULL
+
+RESOURCE_USER
+- id INT PK
+- user_id INT FK -> USERS.id
+- resource_id INT FK -> RESOURCES.id
+- favorite BOOLEAN NOT NULL DEFAULT FALSE
+- UNIQUE(user_id, resource_id) recomendado
+
+RESOURCELEVEL_USER
+- id INT PK
+- user_id INT FK -> USERS.id
+- resourcelevel_id INT FK -> RESOURCELEVELS.id
+- progress DECIMAL(5,2)
+- UNIQUE(user_id, resourcelevel_id) recomendado
+
+3. QUESTIONÁRIOS E RESPOSTAS
+
+QUIZTYPES (uniformização do nome “quiztypes/quiztype” do diagrama)
+- id INT PK
+- type VARCHAR(50) NOT NULL
+
+QASTATES
+- id INT PK
+- state VARCHAR(50) NOT NULL
+
+QUIZZES
+- id INT PK
+- name VARCHAR(150) NOT NULL
+- description TEXT
+- resource_id INT FK -> RESOURCES.id
+- quiztype_id INT FK -> QUIZTYPES.id
+- qastate_id INT FK -> QASTATES.id
+
+QUESTIONS
+- id INT PK
+- title TEXT NOT NULL
+- quiz_id INT FK -> QUIZZES.id
+- qastate_id INT FK -> QASTATES.id
+
+ANSWERS
+- id INT PK
+- answer TEXT NOT NULL
+- correct BOOLEAN NOT NULL
+- question_id INT FK -> QUESTIONS.id
+- qastate_id INT FK -> QASTATES.id
+
+QUIZ_USER
+- id INT PK
+- grade DECIMAL(5,2)
+- grade_date DATETIME
+- user_id INT FK -> USERS.id
+- quiz_id INT FK -> QUIZZES.id
+
+QUIZ_USER_ANSWERS [NOVA — registo das respostas dadas em cada tentativa]
+- id INT PK
+- quiz_user_id INT FK -> QUIZ_USER.id
+- question_id INT FK -> QUESTIONS.id
+- answer_id INT FK -> ANSWERS.id
+- answered_at DATETIME
+- UNIQUE(quiz_user_id, question_id) recomendado se só for permitida uma resposta por pergunta.
+- Regra: answer_id tem de pertencer à question_id indicada; garantir por FK composta ou validação na aplicação.
+
+4. BIBLIOTECA VIRTUAL
+
+NEWS
+- id INT PK
+- title VARCHAR(200) NOT NULL
+- description TEXT
+- author VARCHAR(150)
+- news_date DATETIME
+- img_url VARCHAR(500)
+- healtharea_id INT FK -> HEALTHAREAS.id
+- resourcestate_id INT FK -> RESOURCESTATES.id
+
+ACTIVITIES
+- id INT PK
+- title VARCHAR(200) NOT NULL
+- description TEXT
+- activity_datetime DATETIME
+- url VARCHAR(500)
+- healtharea_id INT FK -> HEALTHAREAS.id
+- resourcestate_id INT FK -> RESOURCESTATES.id
+
+CONTENTS
+- id INT PK
+- title VARCHAR(200) NOT NULL
+- description TEXT
+- author VARCHAR(150)
+- url VARCHAR(500)
+- healtharea_id INT FK -> HEALTHAREAS.id
+- resourcestate_id INT FK -> RESOURCESTATES.id
+- contenttype_id INT FK -> CONTENTTYPES.id
+
+CONTENTTYPES
+- id INT PK
+- type VARCHAR(50) NOT NULL
+
+5. GAMIFICAÇÃO [PROPOSTA A VALIDAR]
+
+BADGES
+- id INT PK
+- name VARCHAR(100) NOT NULL
+- description TEXT
+- image_url VARCHAR(500)
+- resource_id INT FK -> RESOURCES.id
+- Nota: o domínio apenas apresenta badge_url em RESOURCES; a tabela BADGES é uma proposta para representar emblemas como entidades.
+
+USER_BADGES
+- id INT PK
+- user_id INT FK -> USERS.id
+- badge_id INT FK -> BADGES.id
+- awarded_at DATETIME NOT NULL
+- UNIQUE(user_id, badge_id) recomendado
+
+CERTIFICATES
+- id INT PK
+- user_id INT FK -> USERS.id
+- resource_id INT FK -> RESOURCES.id
+- quiz_user_id INT FK -> QUIZ_USER.id
+- issued_at DATETIME NOT NULL
+- certificate_url VARCHAR(500)
+- UNIQUE(user_id, resource_id) recomendado
+- Emissão apenas quando a nota final é >= 85%, conforme RF13/regra do domínio.
+
+6. RELAÇÕES E CARDINALIDADES
+
+- GENDERS 1:N USERS
+- SCHOOLYEARS 1:N USERS
+- USERSTATES 1:N USERS
+- USERS N:M ROLES, através de ROLE_USER
+- USERS N:M RESOURCES, através de RESOURCE_USER
+- USERS N:M RESOURCELEVELS, através de RESOURCELEVEL_USER
+- HEALTHAREAS 1:N RESOURCES, NEWS, ACTIVITIES e CONTENTS
+- RESOURCES 1:N RESOURCELEVELS
+- RESOURCES 1:N QUIZZES (o domínio prevê até dois por recurso: pré e final)
+- RESOURCETYPES 1:N RESOURCES
+- RESOURCESTATES 1:N RESOURCES, RESOURCELEVELS, HEALTHAREAS, NEWS, ACTIVITIES e CONTENTS
+- QUIZTYPES 1:N QUIZZES
+- QASTATES 1:N QUIZZES, QUESTIONS e ANSWERS
+- QUIZZES 1:N QUESTIONS
+- QUESTIONS 1:N ANSWERS
+- USERS 1:N QUIZ_USER
+- QUIZZES 1:N QUIZ_USER
+- QUIZ_USER 1:N QUIZ_USER_ANSWERS
+- QUESTIONS 1:N QUIZ_USER_ANSWERS
+- ANSWERS 1:N QUIZ_USER_ANSWERS
+- USERS N:M BADGES, através de USER_BADGES
+- USERS 1:N CERTIFICATES
+- RESOURCES 1:N CERTIFICATES
+- QUIZ_USER 1:0..1 CERTIFICATES (uma tentativa final elegível pode originar certificado)
+
+7. REGRAS DE NEGÓCIO E INTEGRIDADE
+
+- Menores necessitam de consentimento parental antes da ativação/acesso (RF02 e modelo de domínio).
+- O diagrama guarda parental_consent em USERS. Não foi criada tabela autónoma de consentimentos porque a documentação consultada não especifica os dados do encarregado de educação nem o histórico do consentimento.
+- O acesso aos níveis do recurso e ao questionário final depende da conclusão do diagnóstico inicial (regra do modelo de domínio).
+- Badge/certificado só é atribuído quando a nota do questionário final é >= 85% (regra do domínio e RF13).
+- As respostas ficam ligadas à tentativa, pergunta e opção selecionada.
+- Password deve ser guardada como hash, nunca em texto simples.
+- FKs devem impedir registos órfãos; campos obrigatórios devem ser NOT NULL.
+- Aplicar UNIQUE nas tabelas associativas para impedir relações duplicadas.
+
+8. NORMALIZAÇÃO ATÉ 3FN
+
+1FN: atributos atómicos; listas de papéis, respostas, recursos ou badges não são guardadas numa única coluna.
+2FN: nas tabelas com PK composta, atributos não-chave dependem da chave completa. ROLE_USER contém apenas as duas FKs da PK.
+3FN: géneros, papéis, estados, anos escolares e tipos têm tabelas próprias. Os atributos não-chave dependem da PK e não de outros atributos não-chave. USERS guarda FKs, não descrições repetidas desses elementos.
+
+9. PONTOS A VALIDAR COM A EQUIPA/PROFESSOR
+
+- O diagrama mostra QASTATES duas vezes; tratar como uma única tabela QASTATES, salvo indicação em contrário.
+- Confirmar se cada pergunta permite apenas uma resposta. A UNIQUE(quiz_user_id, question_id) pressupõe uma resposta por pergunta.
+- Confirmar se BADGES e CERTIFICATES são entidades separadas e se cada badge está associado a um recurso. São propostas para cumprir a parte de gamificação, não estão detalhadas no diagrama original.
+- Confirmar o significado funcional de RESOURCE_USER e RESOURCELEVEL_USER (inscrição/favorito e progresso, respetivamente).
+- Tipos e tamanhos são genéricos; adaptar BOOLEAN/BIT, DATETIME e geração de IDs ao SGBD escolhido.
+
+FIM
