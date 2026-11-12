@@ -43,10 +43,33 @@
 
 ---
 
-## Tabelas Catalógicas do Utilizador
-- **genders**: `id` (PK), `gender` VARCHAR(50) NOT NULL
-- **schoolyears**: `id` (PK), `schoolyear` VARCHAR(50) NOT NULL
-- **userstates**: `id` (PK), `state` VARCHAR(50) NOT NULL
+## Tabela: genders
+**Descrição:** Tabela catalógica que armazena os géneros disponíveis para o perfil do utilizador.
+
+| Atributo | Tipo / Modificadores | Descrição |
+| :--- | :--- | :--- |
+| `id` | INT Unsigned | NOT NULL | PK | Auto-Increment | Identificador único do género. |
+| `gender` | VARCHAR(50) | NOT NULL | Designação do género. |
+
+---
+
+## Tabela: schoolyears
+**Descrição:** Tabela catalógica que define os anos de escolaridade dos utilizadores.
+
+| Atributo | Tipo / Modificadores | Descrição |
+| :--- | :--- | :--- |
+| `id` | INT Unsigned | NOT NULL | PK | Auto-Increment | Identificador único do ano de escolaridade. |
+| `schoolyear` | VARCHAR(50) | NOT NULL | Designação do ano de escolaridade. |
+
+---
+
+## Tabela: userstates
+**Descrição:** Tabela catalógica que representa os possíveis estados de uma conta de utilizador.
+
+| Atributo | Tipo / Modificadores | Descrição |
+| :--- | :--- | :--- |
+| `id` | INT Unsigned | NOT NULL | PK | Auto-Increment | Identificador único do estado da conta. |
+| `state` | VARCHAR(50) | NOT NULL | Designação do estado (ex: Ativo, Pendente, Bloqueado). |
 
 ---
 
@@ -106,10 +129,39 @@
 
 ---
 
-## Tabelas Catalógicas de Recursos
-- **healthareas**: `id` (PK), `title`, `subtitle`, `description`, `icon`, `img_url`, `video_url`, `resourcestate_id` (FK).
-- **resourcetypes**: `id` (PK), `type` (VARCHAR(50)).
-- **resourcestates**: `id` (PK), `state` (VARCHAR(50)).
+## Tabela: healthareas
+**Descrição:** Tabela catalógica que armazena as áreas temáticas de literacia em saúde.
+
+| Atributo | Tipo / Modificadores | Descrição |
+| :--- | :--- | :--- |
+| `id` | INT Unsigned \| NOT NULL \| PK \| Auto-Increment | ID da área de saúde. |
+| `title` | VARCHAR(255) \| NOT NULL | Título da área de saúde. |
+| `subtitle` | VARCHAR(255) \| NULL | Subtítulo descritivo. |
+| `description` | TEXT \| NULL | Descrição detalhada da área temática. |
+| `icon` | VARCHAR(255) \| NULL | Ícone representativo. |
+| `img_url` | VARCHAR(500) \| NULL | URL da imagem de destaque. |
+| `video_url` | VARCHAR(500) \| NULL | URL do vídeo introdutório. |
+| `resourcestate_id` | INT Unsigned \| NOT NULL \| FK (resourcestates.id) | Estado de publicação da área. |
+
+---
+
+## Tabela: resourcetypes
+**Descrição:** Tabela catalógica que classifica os tipos de recursos formativos (ex: Webinar, Workshop).
+
+| Atributo | Tipo / Modificadores | Descrição |
+| :--- | :--- | :--- |
+| `id` | INT Unsigned \| NOT NULL \| PK \| Auto-Increment | ID do tipo de recurso. |
+| `type` | VARCHAR(50) \| NOT NULL | Designação do tipo de recurso. |
+
+---
+
+## Tabela: resourcestates
+**Descrição:** Tabela catalógica que define os estados de publicação dos recursos e conteúdos.
+
+| Atributo | Tipo / Modificadores | Descrição |
+| :--- | :--- | :--- |
+| `id` | INT Unsigned \| NOT NULL \| PK \| Auto-Increment | ID do estado do recurso. |
+| `state` | VARCHAR(50) \| NOT NULL | Designação do estado (ex: Publicado, Rascunho, Arquivado). |
 
 ---
 
@@ -168,9 +220,23 @@
 
 ---
 
-## Tabelas Catalógicas de Quizzes
-- **quiztypes**: `id` (PK), `type` VARCHAR(50) (ex: 'Diagnóstico', 'Final').
-- **qastates**: `id` (PK), `state` VARCHAR(50) (ex: 'Ativo', 'Inativo').
+## Tabela: quiztypes
+**Descrição:** Tabela catalógica que identifica a tipologia do questionário (Diagnóstico ou Final).
+
+| Atributo | Tipo / Modificadores | Descrição |
+| :--- | :--- | :--- |
+| `id` | INT Unsigned \| NOT NULL \| PK \| Auto-Increment | ID do tipo de questionário. |
+| `type` | VARCHAR(50) \| NOT NULL | Designação do tipo (ex: 'Diagnóstico', 'Final'). |
+
+---
+
+## Tabela: qastates
+**Descrição:** Tabela catalógica que define o estado de disponibilidade dos questionários, perguntas e respostas.
+
+| Atributo | Tipo / Modificadores | Descrição |
+| :--- | :--- | :--- |
+| `id` | INT Unsigned \| NOT NULL \| PK \| Auto-Increment | ID do estado. |
+| `state` | VARCHAR(50) \| NOT NULL | Designação do estado (ex: 'Ativo', 'Inativo'). |
 
 ---
 
@@ -201,10 +267,29 @@
 
 ---
 
-## Tabela: contents e contenttypes
-- **contents**: `id` (PK), `title`, `description`, `author`, `url`, `healtharea_id` (FK), `resourcestate_id` (FK), `contenttype_id` (FK).
-- **contenttypes**: `id` (PK), `type` VARCHAR(50).
+## Tabela: contents
+**Descrição:** Armazena as publicações, artigos e materiais gerais da biblioteca virtual.
 
+| Atributo | Tipo / Modificadores | Descrição |
+| :--- | :--- | :--- |
+| `id` | BIGINT Unsigned \| NOT NULL \| PK \| Auto-Increment | ID do conteúdo. |
+| `title` | VARCHAR(255) \| NOT NULL | Título da publicação. |
+| `description` | TEXT \| NULL | Resumo ou descrição do conteúdo. |
+| `author` | VARCHAR(150) \| NOT NULL | Autor da publicação. |
+| `url` | VARCHAR(500) \| NULL | URL de acesso ao recurso/documento. |
+| `healtharea_id` | INT Unsigned \| NOT NULL \| FK (healthareas.id) | Área de saúde relacionada. |
+| `resourcestate_id` | INT Unsigned \| NOT NULL \| FK (resourcestates.id) | Estado de publicação. |
+| `contenttype_id` | INT Unsigned \| NOT NULL \| FK (contenttypes.id) | Tipo de conteúdo associado. |
+
+---
+
+## Tabela: contenttypes
+**Descrição:** Tabela catalógica que categoriza os tipos de conteúdos disponíveis na biblioteca virtual.
+
+| Atributo | Tipo / Modificadores | Descrição |
+| :--- | :--- | :--- |
+| `id` | INT Unsigned \| NOT NULL \| PK \| Auto-Increment | ID do tipo de conteúdo. |
+| `type` | VARCHAR(50) \| NOT NULL | Designação do tipo (ex: Artigo, Publicação, Infográfico). |
 ---
 
 ## Mapeamento de Integridade Referencial (Foreign Keys)
