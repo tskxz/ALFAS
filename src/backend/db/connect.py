@@ -1,27 +1,37 @@
-import mysql.connector
 import os
+import mysql.connector
 from dotenv import load_dotenv
 
 load_dotenv()
 
-DB_PASSWORD = os.environ.get("DB_PASSWORD")
 
-# Connect to server
-cnx = mysql.connector.connect(
-    host="127.0.0.1",
-    port=3306,
-    user=DB_PASSWORD,
-    password=DB_PASSWORD)
+def get_db_connection(with_db=True):
+    """
+    Retorna uma nova conexão à base de dados MySQL.
+    """
+    user = os.environ.get("DB_USERNAME")
+    password = os.environ.get("DB_PASSWORD")
+    host = os.environ.get("DB_HOST") or "127.0.0.1"
+    port = int(os.environ.get("DB_PORT") or 3306)
 
-# Get a cursor
-cur = cnx.cursor()
+    config = {
+        "host": host,
+        "port": port,
+        "user": user,
+        "password": password,
+    }
 
-# Execute a query
-cur.execute("SELECT CURDATE()")
+    if with_db:
+        database = os.environ.get("DB_DATABASE")
+        config["database"] = database
 
-# Fetch one result
-row = cur.fetchone()
-print("Current date is: {0}".format(row[0]))
+    return mysql.connector.connect(**config)
 
-# Close connection
-cnx.close()
+
+if __name__ == "__main__":
+    try:
+        cnx = get_db_connection(with_db=False)
+        print("Ligação ao MySQL estabelecida com sucesso.")
+        cnx.close()
+    except Exception as e:
+        print(f"Erro na ligação ao MySQL: {e}")
