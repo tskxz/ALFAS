@@ -1,6 +1,6 @@
 # Caso de Uso: Responder a Questionário Final
 
-## 1. Metadados
+## Metadados
 
 |         Campo          |            Detalhe             |
 | **ID**                 | `UC_005` (`US_A005`)           |
@@ -23,7 +23,7 @@
 
 ---
 
-## 2. Cenário de Sucesso Principal
+## Cenário de Sucesso Principal
 
 1. O utilizador seleciona a opção para iniciar o **Questionário Final** do recurso.
 
@@ -45,7 +45,7 @@
 
 ---
 
-## 3. Fluxograma
+## Fluxograma do Questionário Final
 
 ```mermaid
 flowchart TD
