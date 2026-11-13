@@ -47,7 +47,7 @@
 
 ## 3. Fluxograma
 
-```
+```mermaid
 flowchart TD
     A([Início]) --> B[Utilizador abre o Questionário Final]
     B --> C[Sistema apresenta perguntas e opções]
