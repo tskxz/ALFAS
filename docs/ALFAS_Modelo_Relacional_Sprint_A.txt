@@ -1,9 +1,4 @@
-ALFAS — MODELO RELACIONAL DE DADOS | SPRINT A
-Base documental: diagrama Data Relational Model v1.0 fornecido pelo professor; modelo de domínio, requisitos funcionais e Issue #3 do repositório ALFAS.
-Os tipos são lógicos/genéricos e devem ser adaptados ao SGBD escolhido (MySQL ou SQL Server).
-PK = chave primária | FK = chave estrangeira | UK = único.
-
-1. UTILIZADORES E ACESSO
+UTILIZADORES E ACESSO
 
 GENDERS
 - id INT PK
@@ -40,7 +35,7 @@ SCHOOLYEARS
 - id INT PK
 - schoolyear VARCHAR(50) NOT NULL
 
-2. FORMAÇÃO E RECURSOS
+FORMAÇÃO E RECURSOS
 
 HEALTHAREAS
 - id INT PK
@@ -94,9 +89,9 @@ RESOURCELEVEL_USER
 - progress DECIMAL(5,2)
 - UNIQUE(user_id, resourcelevel_id) recomendado
 
-3. QUESTIONÁRIOS E RESPOSTAS
+QUESTIONÁRIOS E RESPOSTAS
 
-QUIZTYPES (uniformização do nome “quiztypes/quiztype” do diagrama)
+QUIZTYPES
 - id INT PK
 - type VARCHAR(50) NOT NULL
 
@@ -132,16 +127,16 @@ QUIZ_USER
 - user_id INT FK -> USERS.id
 - quiz_id INT FK -> QUIZZES.id
 
-QUIZ_USER_ANSWERS [NOVA — registo das respostas dadas em cada tentativa]
+QUIZ_USER_ANSWERS
 - id INT PK
 - quiz_user_id INT FK -> QUIZ_USER.id
 - question_id INT FK -> QUESTIONS.id
 - answer_id INT FK -> ANSWERS.id
 - answered_at DATETIME
-- UNIQUE(quiz_user_id, question_id) recomendado se só for permitida uma resposta por pergunta.
+- UNIQUE(quiz_user_id, question_id)
 - Regra: answer_id tem de pertencer à question_id indicada; garantir por FK composta ou validação na aplicação.
 
-4. BIBLIOTECA VIRTUAL
+BIBLIOTECA VIRTUAL
 
 NEWS
 - id INT PK
@@ -176,7 +171,7 @@ CONTENTTYPES
 - id INT PK
 - type VARCHAR(50) NOT NULL
 
-5. GAMIFICAÇÃO [PROPOSTA A VALIDAR]
+GAMIFICAÇÃO
 
 BADGES
 - id INT PK
@@ -203,7 +198,7 @@ CERTIFICATES
 - UNIQUE(user_id, resource_id) recomendado
 - Emissão apenas quando a nota final é >= 85%, conforme RF13/regra do domínio.
 
-6. RELAÇÕES E CARDINALIDADES
+RELAÇÕES E CARDINALIDADES
 
 - GENDERS 1:N USERS
 - SCHOOLYEARS 1:N USERS
@@ -230,7 +225,7 @@ CERTIFICATES
 - RESOURCES 1:N CERTIFICATES
 - QUIZ_USER 1:0..1 CERTIFICATES (uma tentativa final elegível pode originar certificado)
 
-7. REGRAS DE NEGÓCIO E INTEGRIDADE
+REGRAS DE NEGÓCIO E INTEGRIDADE
 
 - Menores necessitam de consentimento parental antes da ativação/acesso (RF02 e modelo de domínio).
 - O diagrama guarda parental_consent em USERS. Não foi criada tabela autónoma de consentimentos porque a documentação consultada não especifica os dados do encarregado de educação nem o histórico do consentimento.
@@ -240,19 +235,3 @@ CERTIFICATES
 - Password deve ser guardada como hash, nunca em texto simples.
 - FKs devem impedir registos órfãos; campos obrigatórios devem ser NOT NULL.
 - Aplicar UNIQUE nas tabelas associativas para impedir relações duplicadas.
-
-8. NORMALIZAÇÃO ATÉ 3FN
-
-1FN: atributos atómicos; listas de papéis, respostas, recursos ou badges não são guardadas numa única coluna.
-2FN: nas tabelas com PK composta, atributos não-chave dependem da chave completa. ROLE_USER contém apenas as duas FKs da PK.
-3FN: géneros, papéis, estados, anos escolares e tipos têm tabelas próprias. Os atributos não-chave dependem da PK e não de outros atributos não-chave. USERS guarda FKs, não descrições repetidas desses elementos.
-
-9. PONTOS A VALIDAR COM A EQUIPA/PROFESSOR
-
-- O diagrama mostra QASTATES duas vezes; tratar como uma única tabela QASTATES, salvo indicação em contrário.
-- Confirmar se cada pergunta permite apenas uma resposta. A UNIQUE(quiz_user_id, question_id) pressupõe uma resposta por pergunta.
-- Confirmar se BADGES e CERTIFICATES são entidades separadas e se cada badge está associado a um recurso. São propostas para cumprir a parte de gamificação, não estão detalhadas no diagrama original.
-- Confirmar o significado funcional de RESOURCE_USER e RESOURCELEVEL_USER (inscrição/favorito e progresso, respetivamente).
-- Tipos e tamanhos são genéricos; adaptar BOOLEAN/BIT, DATETIME e geração de IDs ao SGBD escolhido.
-
-FIM
