@@ -5,8 +5,8 @@ from flask_migrate import Migrate
 from dotenv import load_dotenv
 from db import db
 
-# Models
-import models.user
+# Load models so Flask-Migrate can discover their tables.
+import models
 
 load_dotenv()
 
