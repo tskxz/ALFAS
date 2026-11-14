@@ -6,7 +6,31 @@ from dotenv import load_dotenv
 from db import db
 
 # Load models so Flask-Migrate can discover their tables.
-import models
+from models import (
+    Activity,
+    Answer,
+    Content,
+    Contenttype,
+    Gender,
+    Healtharea,
+    News,
+    Qastate,
+    Question,
+    Quiz,
+    QuizUser,
+    Quiztype,
+    Resource,
+    Resourcelevel,
+    ResourcelevelUser,
+    ResourceUser,
+    Resourcestate,
+    Resourcetype,
+    Role,
+    RoleUser,
+    Schoolyear,
+    User,
+    Userstate,
+)
 
 load_dotenv()
 
