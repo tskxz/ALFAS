@@ -1,8 +1,12 @@
 import os
 from flask import Flask, jsonify
 from flask_cors import CORS
+from flask_migrate import Migrate
 from dotenv import load_dotenv
 from db import db
+
+# Models
+import models.user
 
 load_dotenv()
 
@@ -25,6 +29,8 @@ app.config["SQLALCHEMY_DATABASE_URI"] = (
 
 db.init_app(app)
 
+migrate = Migrate(app, db)
+
 
 @app.route("/api/hello")
 def hello():
@@ -32,11 +38,4 @@ def hello():
 
 
 if __name__ == "__main__":
-    try:
-        with app.app_context():
-            import models.user
-            db.create_all()
-    except Exception as e:
-        print(f"Aviso ao inicializar base de dados: {e}")
-
     app.run(debug=True, port=5000)
