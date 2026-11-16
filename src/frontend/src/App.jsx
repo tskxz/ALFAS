@@ -13,7 +13,7 @@ function App() {
   return (
     <div style={{ textAlign: "center", marginTop: "5rem", fontFamily: "sans-serif" }}>
       <h1>{message || "A carregar..."}</h1>
-      <p>Flask + React a funcionar 🚀</p>
+      <p>Flask + React a funcionar</p>
     </div>
   );
 }
