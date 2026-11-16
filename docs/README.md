@@ -66,6 +66,8 @@ O servidor da API ficará em execução em:
 - **Servidor:** `http://localhost:5000`
 - **Endpoint de teste:** `http://localhost:5000/api/hello`
 
+Ao iniciar com `python app.py`, o backend aplica automaticamente as migrações pendentes antes de arrancar o servidor. Configure primeiro as credenciais e o nome da base de dados MySQL no ficheiro `.env`. Se a base de dados estiver indisponível ou uma migração falhar, o backend não inicia.
+
 #### Migrações da base de dados
 
 Sempre que alterar os modelos e precisar de atualizar o esquema da base de dados, execute os comandos a partir de `src/backend`:
@@ -74,13 +76,11 @@ Sempre que alterar os modelos e precisar de atualizar o esquema da base de dados
 flask --app app db migrate -m "Descrição da alteração"
 ```
 
-Revise o ficheiro de migração criado em `migrations/versions/` e, em seguida, aplique-o:
+Revise o ficheiro de migração criado em `migrations/versions/`. A migração será aplicada automaticamente na próxima inicialização do backend. Para aplicá-la manualmente:
 
 ```bash
 flask --app app db upgrade
 ```
-
-Se a migração já existir, execute apenas `flask --app app db upgrade`.
 
 ---
 

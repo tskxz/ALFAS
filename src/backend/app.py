@@ -1,7 +1,7 @@
 import os
 from flask import Flask, jsonify
 from flask_cors import CORS
-from flask_migrate import Migrate
+from flask_migrate import Migrate, upgrade
 from dotenv import load_dotenv
 from db import db
 
@@ -62,4 +62,6 @@ def hello():
 
 
 if __name__ == "__main__":
+    with app.app_context():
+        upgrade(directory=os.path.join(os.path.dirname(__file__), "migrations"))
     app.run(debug=True, port=5000)
