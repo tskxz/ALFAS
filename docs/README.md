@@ -66,6 +66,22 @@ O servidor da API ficará em execução em:
 - **Servidor:** `http://localhost:5000`
 - **Endpoint de teste:** `http://localhost:5000/api/hello`
 
+#### Migrações da base de dados
+
+Sempre que alterar os modelos e precisar de atualizar o esquema da base de dados, execute os comandos a partir de `src/backend`:
+
+```bash
+flask --app app db migrate -m "Descrição da alteração"
+```
+
+Revise o ficheiro de migração criado em `migrations/versions/` e, em seguida, aplique-o:
+
+```bash
+flask --app app db upgrade
+```
+
+Se a migração já existir, execute apenas `flask --app app db upgrade`.
+
 ---
 
 ### 2. Frontend

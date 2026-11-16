@@ -17,3 +17,7 @@ class ResourceUser(db.Model):
         nullable=False,
     )
     favorite = db.Column(db.Boolean, nullable=False, default=False, server_default=db.false())
+    started_at = db.Column(db.DateTime, nullable=True)
+    completed = db.Column(db.Boolean, nullable=False, default=False, server_default=db.false())
+    completed_at = db.Column(db.DateTime, nullable=True)
+    certificate_code = db.Column(db.String(100), nullable=True, unique=True)
