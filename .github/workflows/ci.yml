@@ -15,7 +15,7 @@ jobs:
         image: mysql:8.0
         env:
           MYSQL_ROOT_PASSWORD: root
-          MYSQL_DATABASE: alfas_test
+          MYSQL_DATABASE: alfas
         ports:
           - 3306:3306
         options: >-
@@ -28,7 +28,7 @@ jobs:
       DB_PORT: 3306
       DB_USERNAME: root
       DB_PASSWORD: root
-      DB_DATABASE: alfas_test
+      DB_DATABASE: alfas
     defaults:
       run:
         working-directory: src/backend
