@@ -10,6 +10,25 @@ jobs:
   backend:
     name: Backend (Flask / Python)
     runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: alfas
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping --host=127.0.0.1 --password=root"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
+    env:
+      DB_HOST: 127.0.0.1
+      DB_PORT: 3306
+      DB_USERNAME: root
+      DB_PASSWORD: root
+      DB_DATABASE: alfas
     defaults:
       run:
         working-directory: src/backend
@@ -37,8 +56,7 @@ jobs:
       - name: Testar execução do Backend (Flask)
         run: |
           python app.py &
-          sleep 3
-          curl --fail http://localhost:5000/api/hello
+          curl --fail --retry 30 --retry-connrefused --retry-delay 1 http://localhost:5000/api/hello
 
   frontend:
     name: Frontend (React / Node.js)
