@@ -5,8 +5,10 @@ from flask_migrate import Migrate, upgrade
 from dotenv import load_dotenv
 import mysql.connector
 from db import db
+from api.register import register_bp
+from api.schoolyears import schoolyears_bp
 
-# Load models so Flask-Migrate can discover their tables.
+# Carrega os modelos para o Flask-Migrate reconhecer as tabelas.
 from models import (
     Activity,
     Answer,
@@ -37,6 +39,13 @@ load_dotenv()
 
 app = Flask(__name__)
 CORS(app)
+app.register_blueprint(schoolyears_bp, url_prefix="/api")
+app.register_blueprint(register_bp, url_prefix="/api")
+
+
+@app.get("/api/hello")
+def hello():
+    return jsonify({"message": "Hello World!"})
 
 
 # TODO: Usar db/connect.py para respeitar o DRY
@@ -79,11 +88,6 @@ app.config["SQLALCHEMY_DATABASE_URI"] = (
 db.init_app(app)
 
 migrate = Migrate(app, db)
-
-
-@app.route("/api/hello")
-def hello():
-    return jsonify({"message": "Hello World!"})
 
 
 if __name__ == "__main__":
