@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import Home from "./pages/home.jsx";
 import NotFound from "./pages/404.jsx";
+import Register from "./pages/register.jsx";
 
 import "./index.css";
 
@@ -14,6 +15,11 @@ const router = createBrowserRouter([
     element: <Home />,
     errorElement: <NotFound />,
   },
+  {
+    path: "/registar",
+    element: <Register />,
+    errorElement: <NotFound />,
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
