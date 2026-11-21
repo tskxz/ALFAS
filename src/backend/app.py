@@ -5,6 +5,7 @@ from flask_migrate import Migrate, upgrade
 from dotenv import load_dotenv
 import mysql.connector
 from db import db
+from api.auth.login import auth_bp
 from api.register import register_bp
 from api.schoolyears import schoolyears_bp
 
@@ -38,9 +39,11 @@ from models import (
 load_dotenv()
 
 app = Flask(__name__)
+app.config["JWT_SECRET_KEY"] = os.environ.get("JWT_SECRET_KEY")
 CORS(app)
 app.register_blueprint(schoolyears_bp, url_prefix="/api")
 app.register_blueprint(register_bp, url_prefix="/api")
+app.register_blueprint(auth_bp, url_prefix="/api/auth")
 
 
 @app.get("/api/hello")
