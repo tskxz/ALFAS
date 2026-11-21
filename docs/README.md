@@ -82,6 +82,15 @@ Revise o ficheiro de migração criado em `migrations/versions/`. A migração s
 flask --app app db upgrade
 ```
 
+#### Testes do backend
+
+Com o ambiente virtual ativado, execute a partir da raiz do repositório:
+
+```bash
+cd src/backend/tests
+python -m unittest
+```
+
 ---
 
 ### 2. Frontend
