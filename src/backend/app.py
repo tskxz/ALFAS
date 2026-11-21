@@ -5,7 +5,7 @@ from flask_migrate import Migrate, upgrade
 from dotenv import load_dotenv
 import mysql.connector
 from db import db
-from api.register import register_bp
+from api.auth.register import register_bp
 from api.schoolyears import schoolyears_bp
 
 # Carrega os modelos para o Flask-Migrate reconhecer as tabelas.
