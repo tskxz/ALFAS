@@ -18,8 +18,11 @@ USERS
 - name VARCHAR(150) NOT NULL
 - gender_id INT FK -> GENDERS.id
 - schoolyear_id INT FK -> SCHOOLYEARS.id
+- course_name VARCHAR(150)
 - birth_date DATE
 - parental_consent BOOLEAN NOT NULL DEFAULT FALSE
+- guardian_name VARCHAR(150)
+- guardian_email VARCHAR(254)
 - email VARCHAR(254) NOT NULL UK
 - img_url VARCHAR(500)
 - email_verified_at DATETIME
@@ -228,7 +231,7 @@ RELAÇÕES E CARDINALIDADES
 REGRAS DE NEGÓCIO E INTEGRIDADE
 
 - Menores necessitam de consentimento parental antes da ativação/acesso (RF02 e modelo de domínio).
-- O diagrama guarda parental_consent em USERS. Não foi criada tabela autónoma de consentimentos porque a documentação consultada não especifica os dados do encarregado de educação nem o histórico do consentimento.
+- O diagrama guarda parental_consent, guardian_name e guardian_email em USERS para suportar o processo de registo e consentimento parental de menores.
 - O acesso aos níveis do recurso e ao questionário final depende da conclusão do diagnóstico inicial (regra do modelo de domínio).
 - Badge/certificado só é atribuído quando a nota do questionário final é >= 85% (regra do domínio e RF13).
 - As respostas ficam ligadas à tentativa, pergunta e opção selecionada.

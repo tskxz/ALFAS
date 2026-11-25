@@ -8,8 +8,11 @@
 | `name` | VARCHAR(255) | NOT NULL | Nome completo. |
 | `gender_id` | INT Unsigned | NOT NULL | FK (genders.id) | Género do utilizador. |
 | `schoolyear_id` | INT Unsigned | NOT NULL | FK (schoolyears.id) | Ano de escolaridade. |
+| `course_name` | VARCHAR(255) | NULL | Default: NULL | Nome do curso ou área de estudos do utilizador. |
 | `birth_date` | DATE | NOT NULL | Data de nascimento (usado p/ menoridade). |
 | `parental_consent` | BOOLEAN | NOT NULL | Default: 0 | Consentimento parental obtido. |
+| `guardian_name` | VARCHAR(255) | NULL | Default: NULL | Nome do encarregado de educação (obrigatório se menor de idade). |
+| `guardian_email` | VARCHAR(255) | NULL | Default: NULL | E-mail do encarregado de educação (para envio do pedido de consentimento). |
 | `email` | VARCHAR(255) | NOT NULL | UNIQUE | Endereço de e-mail p/ login. |
 | `img_url` | VARCHAR(500) | NULL | Default: NULL | URL da foto de perfil. |
 | `email_verified_at` | TIMESTAMP | NULL | Default: NULL | Carimbo de verificação do email. |
@@ -20,6 +23,8 @@
 **Regras de Validação & Integridade:**
 - O campo `email` deve ter sintaxe válida de e-mail e ser único na base de dados.
 - Se a idade calculada através de `birth_date` for inferior a 18 anos, `parental_consent` tem obrigatoriamente de registar o valor 1 (True) para a conta poder ser ativada (`userstate_id`).
+- Se a idade calculada através de `birth_date` for inferior a 18 anos, os campos `guardian_name` e `guardian_email` são de preenchimento obrigatório para a recolha de autorização parental.
+- O campo `guardian_email`, quando fornecido, deve ter sintaxe válida de e-mail.
 
 ---
 

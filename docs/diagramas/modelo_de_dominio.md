@@ -12,7 +12,7 @@
 
 ### Entidades e Agregados Principais
 * **User (Entidade Raiz - Utilizador)**
-  * **Atributos:** `id`, `name`, `email`, `birth_date`, `parental_consent`, `password`, `img_url`, `email_verified_at`, `remember_token`, `gender_id`, `schoolyear_id`, `userstate_id`
+  * **Atributos:** `id`, `name`, `email`, `course_name`, `birth_date`, `parental_consent`, `guardian_name`, `guardian_email`, `password`, `img_url`, `email_verified_at`, `remember_token`, `gender_id`, `schoolyear_id`, `userstate_id`
 * **Resource (Entidade Raiz - Formação)**
   * **Atributos:** `id`, `name`, `description`, `img_url`, `badge_url`, `healtharea_id`, `resourcetype_id`, `resourcestate_id`
 * **HealthArea (Entidade)**
