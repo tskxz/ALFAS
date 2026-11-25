@@ -119,6 +119,7 @@
 | `user_id` | BIGINT Unsigned | NOT NULL | FK (users.id) | Utilizador |
 | `resource_id` | BIGINT Unsigned | NOT NULL | FK (resources.id) | Recurso |
 | `favorite` | BOOLEAN | NOT NULL | Default: 0 | Registo de recurso favorito. |
+| `started_at` | DATETIME | NULL | Data e hora em que o utilizador iniciou a formação pela primeira vez. |
 
 ---
 
