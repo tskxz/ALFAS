@@ -83,14 +83,15 @@ RESOURCE_USER
 - user_id INT FK -> USERS.id
 - resource_id INT FK -> RESOURCES.id
 - favorite BOOLEAN NOT NULL DEFAULT FALSE
-- UNIQUE(user_id, resource_id) recomendado
+- UNIQUE(user_id, resource_id) 
+- started_at DATETIME NULL
 
 RESOURCELEVEL_USER
 - id INT PK
 - user_id INT FK -> USERS.id
 - resourcelevel_id INT FK -> RESOURCELEVELS.id
 - progress DECIMAL(5,2)
-- UNIQUE(user_id, resourcelevel_id) recomendado
+- UNIQUE(user_id, resourcelevel_id) 
 
 QUESTIONÁRIOS E RESPOSTAS
 
