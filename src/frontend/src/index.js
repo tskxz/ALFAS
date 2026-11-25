@@ -3,21 +3,27 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import App from "./App";
-import Home from "./pages/home.jsx";
+import Início from "./pages/home.jsx";
 import NotFound from "./pages/404.jsx";
-import Register from "./pages/register.jsx";
+import Registar from "./pages/register.jsx";
+import Entrar from "./pages/login.jsx";
 
 import "./index.css";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <Início />,
     errorElement: <NotFound />,
   },
   {
     path: "/registar",
-    element: <Register />,
+    element: <Registar />,
+    errorElement: <NotFound />,
+  },
+  {
+    path: "/entrar",
+    element: <Entrar />,
     errorElement: <NotFound />,
   }
 ]);

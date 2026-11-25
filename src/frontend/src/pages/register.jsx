@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "../styles/css/registration.css";
 
 const SCHOOL_YEARS = Array.from({ length: 12 }, (_, index) => `${index + 1}.º ano`);
@@ -86,13 +87,16 @@ function RegistrationHeader() {
 function RegistrationSuccess({ message }) {
   return (
     <main className="registration-page">
-      <section className="success-card" aria-labelledby="success-title">
+      <section className="registration-success-card" aria-labelledby="success-title">
         <BrandMark />
         <span className="eyebrow">ALFAS · LITERACIA EM SAÚDE</span>
         <div className="success-icon" aria-hidden="true">✓</div>
         <h1 id="success-title">Registo recebido</h1>
         <p>{message}</p>
         <p className="muted">Pode fechar esta página.</p>
+        <Link className="registration-success-link" to="/entrar">
+          Ir para iniciar sessão
+        </Link>
       </section>
     </main>
   );
@@ -350,31 +354,51 @@ export default function Register() {
   return (
     <main className="registration-page">
       <section className="registration-card" aria-labelledby="register-title">
-        <RegistrationHeader />
+        <div className="registration-form-panel">
+          <RegistrationHeader />
 
-        <form onSubmit={handleSubmit} noValidate>
-          <ProfileFields
-            form={form}
-            onChange={handleChange}
-          />
+          <form onSubmit={handleSubmit} noValidate>
+            <ProfileFields
+              form={form}
+              onChange={handleChange}
+            />
 
-          {isMinor && <GuardianFields form={form} onChange={handleChange} />}
+            {isMinor && <GuardianFields form={form} onChange={handleChange} />}
 
-          {feedback && (
-            <div className={`feedback ${feedback.type}`} role="alert">
-              {feedback.text}
-            </div>
-          )}
+            {feedback && (
+              <div className={`feedback ${feedback.type}`} role="alert">
+                {feedback.text}
+              </div>
+            )}
 
-          <button className="submit-button" type="submit" disabled={submitting}>
-            {submitting ? "A criar conta…" : "Criar conta"}
-            <span aria-hidden="true">→</span>
-          </button>
+            <button className="submit-button" type="submit" disabled={submitting}>
+              {submitting ? "A criar conta…" : "Criar conta"}
+              <span aria-hidden="true">→</span>
+            </button>
 
-          <p className="legal-note">
-            Ao criar conta, confirma que os dados fornecidos são corretos.
+            <p className="legal-note">
+              Ao criar conta, confirma que os dados fornecidos são corretos.
+            </p>
+          </form>
+
+          <p className="registration-login">
+            Já tens conta? <Link to="/entrar">Entrar</Link>
           </p>
-        </form>
+        </div>
+
+        <aside className="registration-note" aria-label="Sobre o ALFAS">
+          <div className="registration-note-icon" aria-hidden="true">✦</div>
+          <h2>Aprender com confiança</h2>
+          <p>
+            Cria a tua conta para explorar conteúdos de saúde e acompanhar o teu
+            progresso, ao teu ritmo.
+          </p>
+          <div className="registration-note-decoration" aria-hidden="true">
+            <span />
+            <span />
+            <span />
+          </div>
+        </aside>
       </section>
 
       <footer className="page-footer">Aprender hoje para cuidar melhor amanhã.</footer>
