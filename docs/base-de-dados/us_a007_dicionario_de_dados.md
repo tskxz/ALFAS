@@ -123,6 +123,7 @@
 | `completed` | BOOLEAN | NOT NULL | Default: 0 | Indica se o utilizador concluiu o recurso. |
 | `completed_at` | DATETIME | NULL | Data de conclusão do recurso. |
 | `certificate_code` | VARCHAR(100) | NULL | UNIQUE | Código único de validação do certificado. |
+| `started_at` | DATETIME | NULL | Data e hora em que o utilizador iniciou a formação pela primeira vez. |
 
 ---
 

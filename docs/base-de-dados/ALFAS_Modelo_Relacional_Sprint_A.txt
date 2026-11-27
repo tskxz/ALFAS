@@ -88,6 +88,8 @@ RESOURCE_USER
 - completed_at DATETIME NULL
 - certificate_code VARCHAR(100) NULL UNIQUE
 - UNIQUE(user_id, resource_id) 
+- UNIQUE(user_id, resource_id) 
+- started_at DATETIME NULL
 
 RESOURCELEVEL_USER
 - id INT PK
