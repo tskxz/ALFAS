@@ -119,6 +119,10 @@
 | `user_id` | BIGINT Unsigned | NOT NULL | FK (users.id) | Utilizador |
 | `resource_id` | BIGINT Unsigned | NOT NULL | FK (resources.id) | Recurso |
 | `favorite` | BOOLEAN | NOT NULL | Default: 0 | Registo de recurso favorito. |
+| `started_at` | DATETIME | NULL | Data de início do recurso. |
+| `completed` | BOOLEAN | NOT NULL | Default: 0 | Indica se o utilizador concluiu o recurso. |
+| `completed_at` | DATETIME | NULL | Data de conclusão do recurso. |
+| `certificate_code` | VARCHAR(100) | NULL | UNIQUE | Código único de validação do certificado. |
 
 ---
 
