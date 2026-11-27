@@ -83,6 +83,11 @@ RESOURCE_USER
 - user_id INT FK -> USERS.id
 - resource_id INT FK -> RESOURCES.id
 - favorite BOOLEAN NOT NULL DEFAULT FALSE
+- started_at DATETIME NULL
+- completed BOOLEAN NOT NULL DEFAULT FALSE
+- completed_at DATETIME NULL
+- certificate_code VARCHAR(100) NULL UNIQUE
+- UNIQUE(user_id, resource_id) 
 - UNIQUE(user_id, resource_id) 
 - started_at DATETIME NULL
 
