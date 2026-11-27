@@ -24,9 +24,22 @@ Mede a diferença entre a classificação obtida no questionário final e a clas
 
 O diagnóstico e a avaliação final devem pertencer ao mesmo utilizador e ao mesmo recurso formativo.
 
-### Evolução percentual relativa
+### Ganho normalizado da aprendizagem
 
-Representa a evolução da classificação final relativamente à classificação inicial.
+Representa a melhoria obtida relativamente à melhoria máxima possível, considerando a classificação inicial.
+
+**Fórmula:**
+
+`Ganho normalizado = (Nota Final - Nota Inicial) / (Nota Máxima - Nota Inicial)`
+
+**Variáveis:**
+- Nota inicial.
+- Nota final.
+- Nota máxima.
+
+**Origem dos dados:** os mesmos campos identificados na métrica anterior.
+
+**Regra:** quando a nota inicial é igual à nota máxima, o ganho normalizado não deve ser calculado, para evitar uma divisão por zero. Nesse caso, deve ser apresentada apenas a evolução absoluta.
 
 **Fórmula:**
 
@@ -148,7 +161,7 @@ A conclusão de níveis formativos não deve ser confundida com retenção da ap
 2. A classificação inicial deve corresponder a um questionário do tipo Diagnóstico.
 3. A classificação final deve corresponder a um questionário do tipo Final.
 4. As classificações devem estar compreendidas entre 0 e 100.
-5. A evolução percentual relativa não deve ser calculada quando a classificação inicial é zero.
+5. O ganho normalizado não deve ser calculado quando a classificação inicial é igual à nota máxima.
 6. Um nível só é considerado concluído quando `progress = 100`.
 7. A taxa de aprovação deve considerar apenas avaliações finais válidas.
 8. O campo `started_at` deve conservar a primeira data de início da formação.
